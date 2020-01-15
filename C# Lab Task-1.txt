@@ -1,0 +1,156 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace Employee
+{
+    struct Date
+    {
+        short day;
+        string month;
+        short year;
+
+        public Date(short day, string month, short year)
+        {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+
+
+        public void takeDateInput()
+        {
+
+            Console.WriteLine("Enter day");
+            this.day = (short)Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Month");
+            this.month = Console.ReadLine();
+            Console.WriteLine("Enter Year");
+            this.year = (short)Convert.ToInt32(Console.ReadLine());
+
+
+
+        }
+
+        public void showDate()
+        {
+            Console.WriteLine("Joining Date: {5} {6} {7}", this.day, this.month, this.year);
+        }
+
+
+    }
+
+    class Employee
+    {
+        private string id;
+        private string name;
+        private int salary;
+        private Date joindate;
+
+        public Employee()
+        {
+
+        }
+
+        public Employee(string id, string name, int salary, Date joindate)
+        {
+
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+            this.joindate = joindate;
+
+        }
+
+        public void setId(String id)
+        {
+            
+            this.id = id;
+        }
+
+        public void setName(String name)
+        {
+            
+            this.name = name;
+        }
+
+        public void setSalary(int salary)
+        {
+            
+            this.salary = salary;
+        }
+
+
+        public string getId()
+        {
+            
+            return this.id;
+        }
+
+        public string getName()
+        {
+           
+            return this.name;
+        }
+        public int getSalary()
+        {
+
+            return this.salary;
+        }
+
+
+
+        public void showEmployeeInformation()
+        {
+
+            
+            Console.WriteLine("id: {0}", this.id);
+            Console.WriteLine("name: {0}", this.name);
+            Console.WriteLine("salary: {0}", this.salary);
+
+
+        }
+
+        public void takeInputForEmployee()
+        {
+            
+            Console.WriteLine(" id");
+            setId(Console.ReadLine());
+
+
+            Console.WriteLine(" name");
+            setName(Console.ReadLine());
+
+
+
+            Console.WriteLine("salary");
+            setSalary((short)Console.Read());
+
+
+
+        }
+
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Date date = new Date(13, "May", 2017);
+                Employee employee1 = new Employee("16-faahim-2", "faahim", 35000, date);
+                employee1.showEmployeeInformation();
+                date.showDate();
+
+                Employee employee2 = new Employee();
+
+                employee2.takeInputForEmployee();
+
+                employee2.showEmployeeInformation();
+                date.showDate();
+            }
+        }
+    }
+}
